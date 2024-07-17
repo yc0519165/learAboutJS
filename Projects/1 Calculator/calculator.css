@@ -1,0 +1,23 @@
+.container{
+    width: 200px;
+    border: 1px solid rgb(158, 146, 146);
+    text-align: center;
+    border-radius: 5px;
+}
+.screen{
+    margin: 10px;
+    width: 85%;
+    font-size: 25px;
+
+}
+.btn{
+  height: 45px;
+  width: 45px;
+  margin:3px;
+
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

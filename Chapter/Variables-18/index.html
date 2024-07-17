@@ -8,15 +8,18 @@
 </head>
 <body>
   
-  <button class="bag" onclick="num += 1;document.querySelector('#headig').innerHTML = `your bag has ${num} item` ">Add to Bag</button>
-  <button class="wishlist" onclick="num -= 1; document.querySelector('#headig').innerHTML = `your bag has ${num} item`">MOVE TO WISHLIST</button>
-  <button class="bag" onclick="num = num + 2; document.querySelector('#headig').innerHTML = `your bag has ${num} item`">Add 1+1 sale item</button>
+  <h1 id="names"></h1>
 
-  <h1 id="headig"></h1>
-
+  
   <script>
-   let num = 0;
-   document.querySelector('#headig').innerHTML = `your bag has ${num} item`
+    let name = 'yuvraj chavhan'
+    document.querySelector('#names').innerHTML = `yuvraj JAVA`
+    
+    const GSTpersentage = 18
+    let carValue = Math.round(((15599 - (10/100 * 15599)) -272 + (2499 - (41/100 * 2499)) - 29 + 25 + 20) * (100 +GSTpersentage) / 100)
+    console.log(carValue)
+
+    console.log(eval('25 * 3669'))
   </script>
 </body>
 </html>
