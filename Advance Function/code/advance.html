@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance function</title>
+</head>
+<body>
+
+  <button id="btn">Cick me</button>
+  <script>
+  //Anonymous Function vs values
+//     let sum = function(num1, num2){
+//       return num1 + num2
+//     }
+//       //     let newSum = sum
+//       //     console.log(sum(5, 6))
+//       // console.log(newSum(5, 7))
+    
+//     let threeSum = function(num1, num2, num3, twoSum){
+//       sum1 = twoSum(num1, num2)
+//       return twoSum(sum1, num3) 
+//     }  
+//     console.log(threeSum(4, 5, 2, sum))
+
+// //Arrow Function  
+
+//     sum = (num1, num2)=>{
+//       return num1 + num2
+//     }
+//     console.log(sum(5,5))
+// //Single line function
+
+//     let mul = num => num + num
+
+//     console.log(mul(58))
+
+//     //Set timeout & Set interval
+// //Set timeout
+//     let ala =()=>{
+//       console.log('good morning')
+//     }
+//     setTimeout(ala, 5000)
+//     console.log('alert')
+
+//     //Set Interval -- function are work to continusly run the time interval 
+//     let olo = () => console.log('yuvraj hi hi hi')
+//     setInterval(olo, 5000)
+    
+   //Event Listener
+  //  let button = document.querySelector('#btn')
+  //  let behaviour =  event=>{
+  //   console.log('yuvraj k k kk k')
+  //  }
+  //  button.addEventListener('click',behaviour)
+  //  let date = (event)=>{
+  //   console.log('chavhan')
+  //  }
+  //  button.addEventListener('click', date)
+
+   //For Each Loop 
+  //  let food = ['halwa','basundi','goabt']
+
+  //  for (let i=1; i<=food.length; i++){
+  //   console.log(food[i])
+  //  }
+  //  food.forEach(function(item) {
+  //   console.log(item)
+  //  })
+  //  let numm = [1,5,2,9,5,4,7,8]
+
+  //  function search (numm, num){
+  //   for (let i=0; i<=numm.length; i++){
+  //     if(numm[i] === num){
+  //       console.log(`Element Show Me${i}`)
+  //     }
+  //   }
+  //  }
+  // search(numm, 1)
+
+  //map Method 
+  // let odd = [1,2,3,5,6,4,9]
+
+  // let non= odd.filter((odd, index) => {
+  //   if(odd % 2 ===1){
+  //     return true
+  //   }else {
+  //     return false
+  //   }
+  // })
+  // console.log(non)
+  // //ShortCut write a Code
+  // let newNon = odd.filter((odd, index) => odd % 2 === 1 );
+  // console.log(newNon)
+
+
+  let vgnonvg = ['burger','iceCream','chicken', 'popcorn']
+  console.log(vgnonvg)
+
+  food = vgnonvg.map((item) =>{
+    return item + ' is fast food'
+    
+
+  })
+  console.log(food)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

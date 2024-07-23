@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Game</title>
+  <link rel="styleSheet" href="cricket.css">
+
+</head>
+<body>
+
+  <h1>Bat Ball Stump Game</h1> 
+  <button class="bat" onclick="
+  const userChoise = 'You choise the Bat'
+  //This will genrated random number as 0 and 3
+  let randNumber = Math.random () * 3;
+  var computerChoise;
+  if(randNumber > 0 && randNumber < 1){
+    computerChoise = 'Bat'
+  }else if(randNumber > 1 && randNumber < 2){
+    computerChoise = 'Ball'
+  }else{
+    computerChoise = 'Stump'
+  }
+  const computerCoiseMsg = `computerChoise ${computerChoise}`
+
+  let resultMsg;
+  if(computerChoise === 'Bat'){
+    resultMsg = 'You are Winner'
+  }else if(computerChoise === 'Ball'){
+    resultMsg = 'Computer is Winner'
+  }else if(computerChoise === 'Stump'){
+    resultMsg = 'game is tie'
+  }
+
+  alert(` You choise the Bat ${computerCoiseMsg} ${resultMsg}`)
+
+
+
+  ">Bat</button>
+
+  <button class="ball" onclick="
+  userChoise = 'You choise the bat'
+  //This will genrated random number as 0 and 3
+  randNumber = Math.random () * 3;
+  var computerChoise;
+  if(randNumber > 0 && randNumber < 1){
+    computerChoise = 'Bat'
+  }else if(randNumber > 1 && randNumber < 2){
+    computerChoise = 'Ball'
+  }else{
+    computerChoise = 'Stump'
+  }
+  computerCoiseMsg = `computerChoise ${computerChoise}`
+
+  if(computerChoise === 'Ball'){
+    resultMsg = 'game is tie'
+  }else if(computerChoise === 'Stump'){
+    resultMsg = 'Computer is Winner'
+  }else if(computerChoise === 'Bat'){
+    resultMsg = 'You are Winner'
+  }
+
+  alert(`You choise the Ball ${computerCoiseMsg} ${resultMsg}`)
+
+
+
+  ">Ball</button>
+
+  <button class="stump" onclick="
+  userChoise = 'You choise the bat'
+  //This will genrated random number as 0 and 3
+  randNumber = Math.random () * 3;
+  var computerChoise;
+  if(randNumber > 0 && randNumber < 1){
+    computerChoise = 'Bat'
+  }else if(randNumber > 1 && randNumber < 2){
+    computerChoise = 'Ball'
+  }else{
+    computerChoise = 'Stump'
+  }
+  computerCoiseMsg = `computerChoise ${computerChoise}`
+
+  resultMsg;
+  if(computerChoise === 'Stump'){
+    resultMsg = 'You are Winner'
+  }else if(computerChoise === 'Bat'){
+    resultMsg = 'Computer is Winner'
+  }else if(computerChoise === 'Ball'){
+  
+    resultMsg = 'game is tie'
+  }
+
+  alert(`You choise the Stump ${computerCoiseMsg} ${resultMsg}`)
+
+
+
+  ">Stump</button>
+
+  <script>
+  </script>
+</body>
+</html>

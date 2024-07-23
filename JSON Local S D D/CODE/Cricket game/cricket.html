@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Game</title>
+  <link rel="styleSheet" href="cricket.css">
+
+</head>
+<body>
+
+
+  <h1>Bat Ball Stump Game</h1> 
+  <button class="choise-button" onclick="
+    computerChoise = choiseNumber()
+    const userChoise = 'You choise the Bat'
+    const computerCoiseMsg = `computerChoise ${computerChoise}`
+    let resultMsg = getResult('Bat',computerChoise )
+    showResult('Bat', computerChoise, resultMsg)
+  choiseNumber()"><img src="images/bat.png" alt="bat images" class="choise"></button>
+
+  <button class="choise-button" onclick="
+  userChoise = 'You choise the bat'
+  computerChoise = choiseNumber()
+  computerCoiseMsg = `computerChoise ${computerChoise}`
+  resultMsg = getResult('Ball',computerChoise )
+  showResult('Ball', computerChoise, resultMsg)
+  "><img src="images/ball.png" alt="ball images" class="choise"></button>
+
+  <button class="choise-button" onclick="
+  userChoise = 'You choise the bat'
+  computerChoise = choiseNumber()
+  computerCoiseMsg = `computerChoise ${computerChoise}`
+  resultMsg = getResult('Stump',computerChoise )
+  showResult('Stump', computerChoise, resultMsg)
+  "><img src="images/stump.png" alt="stump images" class="choise"></button>
+
+  <h3 class="uesr-move"></h3>
+  <h3 class="computer-move"></h3>
+  <h3 class="result"></h3>
+  <h3 class="score"></h3>
+
+  
+  <button onclick="localStorage.clear()
+   resetScore(scoreStr)
+  ">Resst</button>
+
+
+<script>
+    let scoreStr = localStorage.getItem('Score')
+    let score;
+    resetScore(scoreStr)
+
+    function resetScore(scoreStr){
+      score = scoreStr ? JSON.parse(scoreStr) :{
+      tie : 0,
+      win : 0,
+      lost : 0,
+      }
+    
+      score.displayScore = function(){
+        return `win:${score.win}, lost:${score.lost}, tie:${score.tie}`
+    } 
+
+    showResult();
+    }
+         
+    function choiseNumber () {
+  //This will genrated random number as 0 and 3
+  let randNumber = Math.random () * 3;
+  if(randNumber > 0 && randNumber < 1){
+    return 'Bat'
+  }else if(randNumber > 1 && randNumber < 2){
+    return 'Ball'
+  }else{
+    return'Stump'
+  }
+    }
+    choiseNumber()
+
+    function getResult (userMove, computerMove){
+      if(userMove === 'Bat'){
+        if(computerMove === 'Bat'){
+          score.win++
+        return 'You are Winner'
+        }else if(computerMove === 'Ball'){
+          score.tie++
+        return 'Computer is Winner'
+        }else if(computerMove === 'Stump'){
+          score.lost++
+        return 'Game is tie'
+        }
+      }else if(userMove === 'Ball'){
+        if(computerMove === 'Ball'){
+          score.tie++
+        return 'Game is tie'
+        }else if(computerMove === 'Stump'){
+          score.lost++
+        return 'Computer is Winner'
+        }else if(computerMove === 'Bat'){
+          score.win++
+        return 'You are Winner'
+        }
+      }else if(userMove === 'Stump'){
+        if(computerMove === 'Stump'){
+          score.win++
+        return 'You are Winner'
+        }else if(computerMove === 'Bat'){
+          score.lost++
+        return 'Computer is Winner'
+        }else if(computerMove === 'Ball'){
+          score.tie++
+        return 'Game is tie'
+        }
+      }
+    }
+    getResult()
+
+    function showResult(userMove, computerMove, result){
+      localStorage.setItem('Score',JSON.stringify(score))
+      document.querySelector('.uesr-move').innerText =
+        userMove ? `You choise the  ${userMove}` : '';
+
+      document.querySelector('.computer-move').innerText =
+        computerMove ? `Computer Choice ${computerMove}` : '';
+
+      document.querySelector('.result').innerText =
+        result ? `Final Result : ${result}` : '';
+
+      document.querySelector('.score').innerText = `${score.displayScore()}`
+     
+    }
+
+  </script>
+</body>
+</html>

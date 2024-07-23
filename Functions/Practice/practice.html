@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>practice function</title>
+</head>
+<body>
+  <script>
+// ======= p1 =======//    
+    function isOdd (number){
+      let rem = number % 2
+      let isOdd = rem == 1;
+      return console.log(isOdd)
+    }
+    isOdd(4)
+    isOdd(5)
+    isOdd(7)
+    isOdd(6)
+// ======= p2 ====== //
+    function larger(num1, num2){
+      if(num1 > num2){
+        return num1;
+      }else{
+        return num2;
+      }
+    }
+    console.log(larger(4, 2))
+// ========= p3 =======///
+
+    function convrt (convertValue){
+      return 9/5*convertValue + 32
+
+    }
+    console.log(convrt(120))
+
+  </script>
+  
+</body>
+</html>

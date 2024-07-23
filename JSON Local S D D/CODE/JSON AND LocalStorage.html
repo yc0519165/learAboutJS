@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+</head>
+<body>
+  <script>
+    let prduct = {
+      name : 'Shirt',
+      price : '250',
+      color : 'red',
+      detail : {
+        discount : '50%',
+        delivery : 'free',
+        size : 'XL'
+      }
+    }
+    console.log(typeof prduct)
+    console.log(prduct)
+    // this process called stringify its work to convert object are array
+    let str = JSON.stringify(prduct)
+    console.log(typeof str)
+    console.log(str)
+    // this process called parse and its works to convert arr to object
+    let newPrduct = JSON.parse(str)
+    console.log(typeof newPrduct)
+    console.log(newPrduct)
+
+    //Local Storage
+    //Storage an object in localStorage
+    let seltosDetail = {
+      company : 'KIA',
+      carName : 'Seltos',
+      engine : '1478 cc',
+      fuel : 'Petrol / Diesel',
+      price : {
+        exShowroom : '10.90 lac',
+        rto : 20000,
+        insurance : 15000,
+        totalPrice : '11.25 lac'
+      }
+    }
+    //this is a local storage format code
+    console.log(seltosDetail)
+    localStorage.setItem('company', 'KIA')
+    localStorage.setItem('carName', 'Seltos')
+    localStorage.setItem('fuel', 'Petrol / Diesel')
+    localStorage.setItem('engine', '1478 cc')
+    localStorage.setItem('exShowroom', '11.25 lac')
+    console.log(localStorage.getItem('fuel'))
+    //Remove method are use to remove only objects data
+    // localStorage.removeItem('fuel')
+    //clear method are use all clear
+    localStorage.clear()
+
+    //This Meathod are use to full object load
+    localStorage.setItem('seltosDetail',JSON.stringify(seltosDetail))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>

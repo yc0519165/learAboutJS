@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Practice-8</title>
+  <style>
+    .btton{
+      height: 50px;
+      width: 50px;
+      border: none;
+      font-size: 25px;
+      border-radius: 5px;
+    }
+    .js-odd{
+      background-color: black;
+      color: aliceblue;
+    }
+    .js-even{
+      background-color: #dd4949;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <h3 class="greeting"></h3>
+  
+
+  <button class="btton" onclick="buttonPressed();"></button>
+
+
+
+
+  <script>
+  let noOfTimesClicked = localStorage.getItem('noOfTimesClicked')|| 0;
+  function buttonPressed(){
+    noOfTimesClicked++;
+    localStorage.setItem('noOfTimesClicked',noOfTimesClicked) 
+    updateButton();
+  }
+
+  function updateButton(){
+    let button = document.querySelector('.btton')
+    if(noOfTimesClicked % 2 === 0){
+      button.classList.remove('js-odd')
+      button.classList.add('js-even')
+    }else{
+      button.classList.remove('js-even')
+      button.classList.add('js-odd')
+    }
+    button.innerText = noOfTimesClicked
+  }
+  updateButton()
+
+
+
+
+    function dogreeting(peronName){
+      let date = new Date()
+      let hours = date.getHours()
+      let heading = document.querySelector('.greeting')
+
+      if(hours > 5 && hours < 12){
+        heading.innerText = `Good Morning ${peronName}`
+      }else if (hours > 12 && hours < 18){
+        heading.innerText = `Good Afternoon ${peronName}`
+      }else{
+        heading.innerText = `Goog Nigth ${peronName}`
+      }
+    }
+
+    dogreeting(' yuvi')
+  </script>
+</body>
+</html>
